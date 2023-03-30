@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\API\V1;
 
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 use App\Http\Resources\V1\CategoryResource;
 use App\Http\Resources\V1\CategoryCollection;
 use App\Http\Requests\StoreCategoryRequest;
