@@ -4,11 +4,11 @@ namespace App\Http\Controllers\API\V1;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\StaticPage;
 use App\Http\Resources\V1\StaticPageResource;
 use App\Http\Resources\V1\StaticPageCollection;
 use App\Http\Requests\StoreStaticPageRequest;
 use App\Http\Requests\UpdateStaticPageRequest;
+use App\Models\StaticPage;
 
 class StaticPageController extends Controller
 {
@@ -23,20 +23,20 @@ class StaticPageController extends Controller
         return response()->json('New Static Page Created!');
     }
 
-    public function show(StaticPage $sp)
+    public function show(StaticPage $staticPage)
     {
-        return new StaticResource($sp);
+        return new StaticPageResource($staticPage);
     }
 
-    public function update(UpdateStaticPageRequest $request, StaticPage $sp)
+    public function update(UpdateStaticPageRequest $request, StaticPage $staticPage)
     {
-        $sp->update($request->all());
+        $staticPage->update($request->all());
         return response()->json('Static Page Updated!');
     }
     
-    public function destroy(StaticPage $sp)
+    public function destroy(StaticPage $staticPage)
     {
-        $sp->delete();
-        return response()->json('Category Updated!');
+        $staticPage->delete();
+        return response()->json('Category Deleted!');
     }
 }

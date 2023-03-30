@@ -11,7 +11,7 @@ class UpdateStaticPageRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,7 @@ class UpdateStaticPageRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'slug' => ['required', 'unique:static_pages,slug,'. $this->staticPage->id],
+            'slug' => ['required', 'unique:static_pages,slug,'. $this->static_page->id],
             'title' => ['required'],
             'body' => ['required'],
             'meta_title' => ['required']

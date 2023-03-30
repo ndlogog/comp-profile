@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class StaticPage extends Model
 {
     use HasFactory;
+    protected $table = 'static_pages';
     
-    protected $fillable = ['slug', 'name', 'description', 'featured_image', 'meta_title', 'meta_description'];
+    protected $fillable = ['slug', 'title', 'body', 'featured_image', 'meta_title', 'meta_description'];
 }
