@@ -37,6 +37,6 @@ class StaticPageController extends Controller
     public function destroy(StaticPage $staticPage)
     {
         $staticPage->delete();
-        return response()->json('Category Deleted!');
+        return response()->json('Static Page Deleted!');
     }
 }

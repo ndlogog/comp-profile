@@ -12,8 +12,9 @@ Route::group(['namespace' => 'App\Http\Controllers\API\V1', 'prefix' => 'v1'], f
         Route::post('login', 'login');
     });
 
-    Route::middleware('auth:sanctum')->group(function () {
+    // Route::middleware('auth:sanctum')->group(function () {
         Route::apiResource('category', CategoryController::class);
+        Route::apiResource('post', PostController::class); 
         Route::apiResource('static-page', StaticPageController::class); 
-    });
+    // });
 });
